@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- title -->
+    <title>Pokedex</title>
+
+    <!-- icon -->
+    <link class="flavicon" rel="icon" href="">
+
+    <!-- include fonts -->
+    <link rel="stylesheet" href="">
+
+    <!-- add UTF-8 Code -->
+    <meta charset="utf-8">
+
+    <!-- handle resolution with viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- include style -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- include script -->
+    <script src="./script.js"></script>
+
+</head>
+
+<body onload="initHP()">
+    <header>
+        <h1>Pokedex</h1>
+        <nav id="navbar">
+            <div id="searchField">
+                <input id="iptSearchByName" class="ipt" type="text" onkeyup="filterByName()"
+                    placeholder="Search by Name">
+                <button id="btnSearch" class="btn">
+                    <img class="btnImg" class="navImg" src="img/icons/navIcons/search.svg" alt="">
+                    <span class="hideBtnName"> Search </span>
+                </button>
+            </div>
+            <div id="filterField">
+                <button id="btnFilterDropdown" class="btn ">
+                    <img class="btnImg" src="img/icons/navIcons/filter.svg" alt="">
+                    <span class="hideBtnName"> Filter by: </span>
+                </button>
+                <div id="filterDropdownContent">
+                    <div id="filterOptions">
+                        <div class="filterCategorie">
+                            <h2>Generation:</h2>
+                            <div class="filterCategorieOptions">
+                                <div id="GenerationField0" class="filterCategorieElememt">
+                                    <input id="GenerationElement0" class="filterCategorieElementChkbx" type="checkbox" checked>
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement0">Generation
+                                        I</label>
+                                </div>
+                                <div id="GenerationField1" class="filterCategorieElememt">
+                                    <input id="GenerationElement1" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement1">Generation
+                                        II</label>
+                                </div>
+                                <div id="GenerationField2" class="filterCategorieElememt">
+                                    <input id="GenerationElement2" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement2">Generation
+                                        III</label>
+                                </div>
+                                <div id="GenerationField3" class="filterCategorieElememt">
+                                    <input id="GenerationElement3" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement3">Generation
+                                        IV</label>
+                                </div>
+                                <div id="GenerationField4" class="filterCategorieElememt">
+                                    <input id="GenerationElement4" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement4">Generation
+                                        V</label>
+                                </div>
+                                <div id="GenerationField5" class="filterCategorieElememt">
+                                    <input id="GenerationElement5" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement5">Generation
+                                        VI</label>
+                                </div>
+                                <div id="GenerationField6" class="filterCategorieElememt">
+                                    <input id="GenerationElement6" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement6">Generation
+                                        VII</label>
+                                </div>
+                                <div id="GenerationField7" class="filterCategorieElememt">
+                                    <input id="GenerationElement7" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement7">Generation
+                                        VIII</label>
+                                </div>
+                                <div id="GenerationField8" class="filterCategorieElememt">
+                                    <input id="GenerationElement8" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="GenerationElement8">Generation
+                                        IX</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filterCategorie">
+                            <h2>Color:</h2>
+                            <div class="filterCategorieOptions">
+                                <div id="ColorField0" class="filterCategorieElememt">
+                                    <input id="ColorElement0" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement0">black</label>
+                                </div>
+                                <div id="ColorField1" class="filterCategorieElememt">
+                                    <input id="ColorElement1" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement1">blue</label>
+                                </div>
+                                <div id="ColorField2" class="filterCategorieElememt">
+                                    <input id="ColorElement2" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement2">brown</label>
+                                </div>
+                                <div id="ColorField3" class="filterCategorieElememt">
+                                    <input id="ColorElement3" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement3">gray</label>
+                                </div>
+                                <div id="ColorField4" class="filterCategorieElememt">
+                                    <input id="ColorElement4" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement4">green</label>
+                                </div>
+                                <div id="ColorField5" class="filterCategorieElememt">
+                                    <input id="ColorElement5" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement5">pink</label>
+                                </div>
+                                <div id="ColorField6" class="filterCategorieElememt">
+                                    <input id="ColorElement6" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement6">purple</label>
+                                </div>
+                                <div id="ColorField7" class="filterCategorieElememt">
+                                    <input id="ColorElement7" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement7">red</label>
+                                </div>
+                                <div id="ColorField8" class="filterCategorieElememt">
+                                    <input id="ColorElement8" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement8">white</label>
+                                </div>
+                                <div id="ColorField9" class="filterCategorieElememt">
+                                    <input id="ColorElement9" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="ColorElement9">yellow</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filterCategorie">
+                            <h2>Type:</h2>
+                            <div class="filterCategorieOptions">
+                                <div id="TypeField0" class="filterCategorieElememt">
+                                    <input id="TypeElement0" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement0">normal</label>
+                                    <img src="img/icons/normal.svg" alt="">
+                                </div>
+                                <div id="TypeField1" class="filterCategorieElememt">
+                                    <input id="TypeElement1" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement1">fighting</label>
+                                    <img src="img/icons/fighting.svg" alt="">
+                                </div>
+                                <div id="TypeField2" class="filterCategorieElememt">
+                                    <input id="TypeElement2" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement2">flying</label>
+                                    <img src="img/icons/flying.svg" alt="">
+                                </div>
+                                <div id="TypeField3" class="filterCategorieElememt">
+                                    <input id="TypeElement3" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement3">poison</label>
+                                    <img src="img/icons/poison.svg" alt="">
+                                </div>
+                                <div id="TypeField4" class="filterCategorieElememt">
+                                    <input id="TypeElement4" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement4">ground</label>
+                                    <img src="img/icons/ground.svg" alt="">
+                                </div>
+                                <div id="TypeField5" class="filterCategorieElememt">
+                                    <input id="TypeElement5" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement5">rock</label>
+                                    <img src="img/icons/rock.svg" alt="">
+                                </div>
+                                <div id="TypeField6" class="filterCategorieElememt">
+                                    <input id="TypeElement6" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement6">bug</label>
+                                    <img src="img/icons/bug.svg" alt="">
+                                </div>
+                                <div id="TypeField7" class="filterCategorieElememt">
+                                    <input id="TypeElement7" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement7">ghost</label>
+                                    <img src="img/icons/ghost.svg" alt="">
+                                </div>
+                                <div id="TypeField8" class="filterCategorieElememt">
+                                    <input id="TypeElement8" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement8">steel</label>
+                                    <img src="img/icons/steel.svg" alt="">
+                                </div>
+                                <div id="TypeField9" class="filterCategorieElememt">
+                                    <input id="TypeElement9" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement9">fire</label>
+                                    <img src="img/icons/fire.svg" alt="">
+                                </div>
+                                <div id="TypeField10" class="filterCategorieElememt">
+                                    <input id="TypeElement10" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement10">water</label>
+                                    <img src="img/icons/water.svg" alt="">
+                                </div>
+                                <div id="TypeField11" class="filterCategorieElememt">
+                                    <input id="TypeElement11" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement11">grass</label>
+                                    <img src="img/icons/grass.svg" alt="">
+                                </div>
+                                <div id="TypeField12" class="filterCategorieElememt">
+                                    <input id="TypeElement12" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement12">electric</label>
+                                    <img src="img/icons/electric.svg" alt="">
+                                </div>
+                                <div id="TypeField13" class="filterCategorieElememt">
+                                    <input id="TypeElement13" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement13">psychic</label>
+                                    <img src="img/icons/psychic.svg" alt="">
+                                </div>
+                                <div id="TypeField14" class="filterCategorieElememt">
+                                    <input id="TypeElement14" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement14">ice</label>
+                                    <img src="img/icons/ice.svg" alt="">
+                                </div>
+                                <div id="TypeField15" class="filterCategorieElememt">
+                                    <input id="TypeElement15" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement15">dragon</label>
+                                    <img src="img/icons/dragon.svg" alt="">
+                                </div>
+                                <div id="TypeField16" class="filterCategorieElememt">
+                                    <input id="TypeElement16" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement16">dark</label>
+                                    <img src="img/icons/dark.svg" alt="">
+                                </div>
+                                <div id="TypeField17" class="filterCategorieElememt">
+                                    <input id="TypeElement17" class="filterCategorieElementChkbx" type="checkbox">
+                                    <label class="filterCategorieElememtlabel" for="TypeElement17">fairy</label>
+                                    <img src="img/icons/fairy.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btnFilter" class="btn" onclick="filterPokemon()">filter</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="PokedexCards">
+
+    </main>
+
+    <div id="overlay">
+        <button id="btnLastOvly" class="navBtn">
+            <img class="navImg" src="./img/icons/navIcons/last.svg" alt="last">
+        </button>
+        <div id="overlayCard">
+            <div id="overlayCardHeader">
+                <div id="wrapperHeaderDataOvly">
+                    <div id="wrapperHeaderNameIDOvly" >
+                        <span id="PokemonNameOvlyCard">Name</span>
+                        <span id="PokemonIDOvlyCard">ID</span>
+                    </div>
+                    <div id="wrapperHeaderTypesOvly">
+
+                    </div>
+                    <div id="wrapperHeaderDetailsOvly" >
+                        <div>
+                            <span><b>weight:</b><span id="PokemonWeightOvlyCard"></span></span>
+                            <span><b>height:</b><span id="PokemonHeightOvlyCard"></span></span>
+                        </div>
+                        <div>
+                            <span><b>habitat:</b><span id="PokemonHabitatOvlyCard"></span></span>
+                            <span><b>XP:</b><span id="PokemonXpOvlyCard"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <img id="PokemonIMGOvlyCard" src="" alt="Bild">
+                <div id="btnGroupOverlayResponsive">
+                    <button id="btnLastOvlyRes" class="navBtn" onclick="">
+                        <img src="img/icons/navIcons/last.svg" alt="">
+                    </button>
+                    <button id="btnNextOvlyRes" class="navBtn" onclick="">
+                        <img src="img/icons/navIcons/next.svg" alt="">
+                    </button>
+                    <button id="btnCloseOvlyRes" class="navBtn" onclick="setDisplayStyleNone('overlay')">
+                        <img src="img/icons/navIcons/close.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div id="tabGroup">
+                <button id="tab0" class="btn tab" onclick="renderPokemonData(0)">Base Stats</button>
+                <button id="tab1" class="btn tab" onclick="renderPokemonData(1)">Additional Information</button>
+                <button id="tab2" class="btn tab" onclick="renderPokemonData(2)">Evolution Chain</button>
+            </div>
+            <div id="tabData">
+
+            </div>
+        </div>
+        <button id="btnNextOvly" class="navBtn" onclick="">
+            <img class="navImg" src="./img/icons/navIcons/next.svg" alt="next">
+        </button>
+        <button id="btnCloseOvly" class="navBtn" onclick="setDisplayStyleNone('overlay')">
+            <img class="navImg" src="./img/icons/navIcons/close.svg" alt="close">
+        </button>
+    </div>
+
+
+
+    <footer>
+        <!-- footer content -->
+    </footer>
+</body>
+
+</html>
